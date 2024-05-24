@@ -21,13 +21,13 @@ def index():
             icon=folium.Icon(color='red')
         ).add_to(map)
 
-    map.save('templates/map.html')
+    map.save('template/index.html')
 
     t = threading.Thread(target=start_kivy_app)
     t.daemon = True
     t.start()
 
-    return render_template('index.html')
+    return render_template('template/index.html')
 
 def start_kivy_app():
     webview.create_window("Mapa de Risco - Pernambuco", "http://127.0.0.1:5000/")
